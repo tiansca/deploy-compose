@@ -6,6 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 tests/**/coverage/
+/data/.ssh/
+/data/db/
+/data/html/
+/data/projects/
+/data/shell/
 
 # Editor directories and files
 .idea
@@ -14,3 +19,8 @@ tests/**/coverage/
 *.ntvs*
 *.njsproj
 *.sln
+/data/.ssh/config
+/data/.ssh/id_rsa
+/data/.ssh/id_rsa.pub
+/data/.ssh/known_hosts
+/data/.ssh/known_hosts.old

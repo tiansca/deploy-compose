@@ -18,11 +18,11 @@ services:
   frontend:
     image: deploy-docker-frontend:latest
     ports:
-      - "8081:8080"
+      - "8809:8080"
     networks:
       - mynetwork
     volumes:
-      - ./data/html:/usr/share/nginx/html/web
+      - ./data/html:/usr/ share/nginx/html/web
     depends_on:
       - backend
     restart: always
@@ -36,8 +36,13 @@ services:
       - ./data/projects:/home/deploy/projects
       - ./data/shell:/home/deploy/shell
       - ./data/html:/usr/share/nginx/html
-      - /root/.ssh:/root/.ssh
+      - ./data/.ssh:/home/.ssh
     restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
 networks:
   mynetwork:
     driver: bridge
